@@ -1,12 +1,25 @@
-import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import { UserProvider } from './context/UserContext';
+
+import ThemeToggler from './components/ThemeToggler';
+import LoginToggle from './components/LoginToggle';
+import UserProfile from './components/UserProfile';
+import DataDisplay from './components/DataDisplay';
 
 const App = () => {
-    return (
-        <div>
-            <h1>Hello</h1>
-            <p>This is built manually</p>
+  return (
+    <ThemeProvider>
+      <UserProvider>
+        <div style={{ maxWidth: '600px', margin: '0 auto', fontFamily: 'sans-serif' }}>
+          <h1>React Assignment</h1>
+          <ThemeToggler />
+          <LoginToggle />
+          <UserProfile />
+          <DataDisplay />
         </div>
-    );
+      </UserProvider>
+    </ThemeProvider>
+  );
 };
 
 export default App;

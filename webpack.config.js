@@ -11,8 +11,12 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+
   // 3. MODULE: Rules for how to handle different file types.
- module: {
+  module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
@@ -33,7 +37,7 @@ module.exports = {
   // 4. PLUGINS: Extra tools.
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html' // Use this HTML as a template
+      template: './src/index.html' 
     })
   ]
 };
